@@ -1,0 +1,60 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <div class="field">
+    <label class="label" for="username">Username</label>
+    <div class="control">
+      <input
+        type="text"
+        name="username"
+        id="username"
+        class="input"
+        placeholder="username"
+        ngModel
+      />
+    </div>
+  </div>
+  <div class="field">
+    <label class="label" for="email">Email</label>
+    <div class="control">
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="input"
+        placeholder="your@email.com"
+        ngModel
+      />
+    </div>
+  </div>
+  <div class="field">
+    <label class="label" for="password">Password</label>
+    <div class="control">
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="input"
+        placeholder="your password"
+        ngModel
+      />
+    </div>
+  </div>
+
+  <button class="button is-dark" type="submit">Sign Up</button>
+</form>
+
+
+
+<h2 class="title is-4 mt-6">Test two way data binding</h2>
+<div class="field mb-6">
+  <label class="label" for="namesurname">Name and Surname : {{ namesurname }}</label>
+  <div class="control">
+    <input
+      type="text"
+      name="namesurname"
+      id="namesurname"
+      class="input"
+      placeholder="Name Surname"
+      [(ngModel)]="namesurname"
+    />
+  </div>
+</div>

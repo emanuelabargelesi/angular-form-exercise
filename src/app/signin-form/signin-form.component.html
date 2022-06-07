@@ -1,0 +1,65 @@
+<h2 class="title is-4">Reactive Driven Form</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <div class="field">
+    <label class="label" for="name">Name</label>
+    <div class="control">
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="input"
+        placeholder="name"
+        [formControl]="convertToFormControl(form.controls['name'])"
+      />
+      <p
+        *ngIf="form.controls['name'].hasError('required')"
+        class="help is-danger"
+      >
+        Name is mandatory
+      </p>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label" for="surname">Surname</label>
+    <div class="control">
+      <input
+        type="text"
+        name="surname"
+        id="surname"
+        class="input"
+        placeholder="surname"
+        [formControl]="convertToFormControl(form.controls['surname'])"
+      />
+      <p *ngIf="!form.controls['surname'].valid" class="help is-danger">
+        Surname is mandatory
+      </p>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label" for="anotherPassword">Password</label>
+    <div class="control">
+      <input
+        type="password"
+        name="anotherPassword"
+        id="anotherPassword"
+        class="input"
+        placeholder="password"
+        [formControl]="convertToFormControl(form.controls['anotherPassword'])"
+      />
+      <p
+        *ngIf="form.controls['anotherPassword'].hasError('required')"
+        class="help is-danger"
+      >
+        Password is mandatory
+      </p>
+      <p
+        *ngIf="form.controls['anotherPassword'].hasError('invalidPassword')"
+        class="help is-danger"
+      >
+        Password must be of 10 or more char, one uppercase, one number, one special char
+      </p>
+    </div>
+  </div>
+
+  <button class="button is-dark" type="submit">Sign Up</button>
+</form>
