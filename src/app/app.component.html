@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <main class="container is-fluid">
-    <div class="section">
-      <h1 class="title is-2">Forms</h1>
-      <hr>
-      <h2 class="title is-4">Template Driven Form</h2>
-      <app-signup-form></app-signup-form>
-      <hr>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a
+          (click)="toggleNavbar()"
+          role="button"
+          #navBurger
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-      <app-signin-form></app-signin-form>
-    </div>
-  </main>
-</body>
+      <div id="navbarBasicExample" class="navbar-menu" #navMenu>
+        <div class="navbar-start">
+          <a class="navbar-item" [routerLink]="['/home']">Home</a>
+          <a class="navbar-item" [routerLink]="['/sign-in']">Reactive Driven Form</a>
+          <a class="navbar-item" [routerLink]="['/sign-up/emanuela_bargelesi']"> Template Driven Form </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container is-fluid">
+      <section class="section">
+        <h1 class="title is-2">Forms and routing exercise</h1>
+        <router-outlet></router-outlet>
+      </section>
+    </main>
+  </body>
 </html>
-
-<router-outlet></router-outlet>
