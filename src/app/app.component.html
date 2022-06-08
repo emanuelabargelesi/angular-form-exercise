@@ -1,43 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a
-          (click)="toggleNavbar()"
-          role="button"
-          #navBurger
-          class="navbar-burger burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a
+      (click)="toggleNavbar()"
+      role="button"
+      #navBurger
+      class="navbar-burger burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarBasicExample"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 
-      <div id="navbarBasicExample" class="navbar-menu" #navMenu>
-        <div class="navbar-start">
-          <a class="navbar-item" [routerLink]="['/home']">Home</a>
-          <a class="navbar-item" [routerLink]="['/sign-in']">Reactive Driven Form</a>
-          <a class="navbar-item" [routerLink]="['/sign-up/emanuela_bargelesi']"> Template Driven Form </a>
-        </div>
-      </div>
-    </nav>
+  <div id="navbarBasicExample" class="navbar-menu" #navMenu>
+    <div class="navbar-start">
+      <a class="navbar-item" [routerLink]="['/home']">Home</a>
+      <a class="navbar-item" [routerLink]="['/sign-in']"
+        >Reactive Driven Form</a
+      >
+      <a class="navbar-item" [routerLink]="['/sign-up/emanuela_bargelesi']">
+        Template Driven Form
+      </a>
+    </div>
+  </div>
+</nav>
 
-    <main class="container is-fluid">
-      <section class="section">
-        <h1 class="title is-2">Forms and routing exercise</h1>
-        <router-outlet></router-outlet>
-      </section>
-    </main>
-  </body>
-</html>
+<main class="container is-fluid">
+  <section class="section">
+    <h1 class="title is-2">Forms and routing exercise</h1>
+    <router-outlet></router-outlet>
+  </section>
+</main>

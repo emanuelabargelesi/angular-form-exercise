@@ -8,10 +8,14 @@ import {
 } from '@angular/forms';
 
 function passwordValidator(control: FormControl): Object {
-  if(!control.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/)) {
-    return { invalidPassword: true }
+  if (
+    !control.value.match(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/
+    )
+  ) {
+    return { invalidPassword: true };
   }
-  return { invalidPassword: false }
+  return { invalidPassword: false };
 }
 
 @Component({
@@ -19,7 +23,6 @@ function passwordValidator(control: FormControl): Object {
   templateUrl: './signin-form.component.html',
   styleUrls: ['./signin-form.component.scss'],
 })
-
 export class SigninFormComponent implements OnInit {
   form: FormGroup;
 
